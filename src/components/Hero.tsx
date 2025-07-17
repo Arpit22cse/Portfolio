@@ -5,7 +5,32 @@ const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentRole, setCurrentRole] = useState(0);
 
-  const roles = ['Frontend Developer', 'React Specialist', 'UI/UX Enthusiast', 'Problem Solver'];
+  const roles = [
+  'Full Stack Developer',
+  'Java & Python Programmer',
+  'JavaScript Enthusiast',
+  'React & Node.js Developer',
+  'API & WebSocket Specialist',
+  'Database Designer (MySQL | MongoDB)',
+  'GraphQL & REST API Builder',
+  'Docker & DevOps Explorer',
+  'UI Developer with Tailwind CSS',
+  'Data Structures & Algorithms Practitioner',
+  'Git & GitHub Power User',
+  'Problem Solver',
+  'Clean Code Advocate',
+  'Agile Learner'
+]
+
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/resume.pdf"; // Make sure resume.pdf is inside your public folder
+    link.download = "Arpit_Khandelwal_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -64,7 +89,10 @@ const Hero: React.FC = () => {
 
           <div className={`transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="flex flex-wrap gap-4 justify-center mb-12">
-              <button className="group px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <button 
+              className="group px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              onClick={handleDownload}
+              >
                 <div className="flex items-center gap-2">
                   <Download size={20} />
                   Download Resume

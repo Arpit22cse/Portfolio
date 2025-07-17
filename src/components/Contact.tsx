@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,9 +44,20 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    const response = await fetch('https://backend-6qxr.onrender.com/sendMail', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.status === 200) {
+      toast.success("✅ Your message was sent successfully!");
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } else {
+      toast.error("❌ Failed to submit. Please try again.");
+    }
     
-    console.log('Form submitted:', formData);
+    
     setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
   };
@@ -93,6 +106,7 @@ const Contact: React.FC = () => {
 
   return (
     <section ref={sectionRef} id="contact" className="py-20 bg-black/20">
+    <ToastContainer/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="text-center mb-16">

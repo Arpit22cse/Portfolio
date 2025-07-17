@@ -7,57 +7,81 @@ const Projects: React.FC = () => {
 
   const projects = [
     {
-      title: "SMM Panel Platform",
-      description: "A comprehensive Social Media Marketing (SMM) panel for managing and automating social media services. Features include a detailed service catalog, order placement and tracking, user authentication, a robust payment system (e.g., PhonePe integration), and administrative tools for service management and user oversight.",
-      image: "https://placehold.co/800x600/000000/FFFFFF?text=SMM+Panel",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "MongoDB", "PhonePe API (Mock/Integration)"],
-      liveUrl: "https://smm-frontend-omega.vercel.app/",
-      githubUrl: "https://github.com/Arpit22cse/smmFrontend",
-      featured: true
-    },
+  title: "SMM Panel Platform",
+  description:
+    "A full-featured Social Media Marketing (SMM) panel with separate roles for Admin and User. Admins can create users, assign balance, manage services using third-party APIs, and monitor activity via dashboards. Users can place service orders, track their status, and view transactions in a secure and responsive interface.",
+  image: "https://images.pexels.com/photos/6476586/pexels-photo-6476586.jpeg?auto=compress&cs=tinysrgb&w=800", // 💡 Relevant modern UI image
+  technologies: [
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "JWT"
+  ],
+  liveUrl: "https://smm-frontend-omega.vercel.app/",
+  githubUrl: "https://github.com/Arpit22cse/smmFrontend",
+  featured: true
+},
+
     {
-      title: "Real-time Tic-Tac-Toe (WebSocket)",
-      description: "A classic Tic-Tac-Toe game developed with React and TypeScript, featuring real-time multiplayer capabilities powered by WebSockets. Players can join a queue, match with opponents, and play interactively. The backend (Node.js) manages game state and communication.",
-      image: "https://placehold.co/800x600/000000/FFFFFF?text=TicTacToe",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "WebSockets", "Node.js", "Express"],
-      liveUrl: "https://tic-tac-toe-kappa-one-80.vercel.app/",
-      githubUrl: "https://github.com/Arpit22cse/TicTacToe",
-      featured: true
-    },
+  title: "Real-time Tic-Tac-Toe (WebSocket)",
+  description:
+    "A real-time multiplayer Tic-Tac-Toe game built with React and TypeScript, using WebSockets for instant communication. Players can join matchmaking queues, compete in live games, and experience interactive gameplay. Includes JWT-based authentication and a Node.js backend to manage game sessions and state.",
+  image: "https://imgs.search.brave.com/C3Yq450eNEN0OsDvqkMAaAN_fb73zQ_JYf6G48cIB8A/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9oYW5kd3Jp/dHRlbi1kb29kbGUt/dGljdGFjdG9lLWdh/bWUtd2lubmluZy0y/NjBudy0yNDQxMjYz/NTA5LmpwZw", // ✅ High-quality, relevant image
+  technologies: [
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "WebSockets",
+    "Node.js",
+    "Express",
+    "JWT"
+  ],
+  liveUrl: "https://tic-tac-toe-kappa-one-80.vercel.app/",
+  githubUrl: "https://github.com/Arpit22cse/TicTacToe",
+  featured: true
+}
+,
     {
-      title: 'Weather Dashboard',
-      description: 'A beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.',
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'Weather API', 'Chart.js', 'Geolocation'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      title: "Portfolio Website",
+      description:
+        "A responsive portfolio website showcasing projects and skills with smooth animations and modern design.",
+      image:
+        "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: ["React", "Tailwind CSS", "Framer Motion", "TypeScript"],
+      liveUrl: "http://backendsmith.tech",
+      githubUrl: "https://github.com/Arpit22cse/portfolio",
       featured: false,
     },
+    // {
+    //   title: "Social Media Dashboard",
+    //   description:
+    //     "A comprehensive social media analytics dashboard with data visualization and performance tracking.",
+    //   image:
+    //     "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800",
+    //   technologies: ["React", "D3.js", "Python", "FastAPI"],
+    //   liveUrl: "https://example.com",
+    //   githubUrl: "https://github.com",
+    //   featured: false,
+    // },
     {
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website showcasing projects and skills with smooth animations and modern design.',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
-      featured: false,
-    },
-    {
-      title: 'Social Media Dashboard',
-      description: 'A comprehensive social media analytics dashboard with data visualization and performance tracking.',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'D3.js', 'Python', 'FastAPI'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
-      featured: false,
-    },
-    {
-      title: 'Fitness Tracker',
-      description: 'A mobile-first fitness tracking application with workout logging, progress visualization, and goal setting.',
-      image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React Native', 'Firebase', 'Chart.js', 'Redux'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      title: "To-Do List App",
+      description:
+        "A full-stack to-do list application with user authentication, task CRUD operations, and MongoDB storage. Users can register, log in, and manage their tasks securely.",
+      image:
+        "https://images.pexels.com/photos/5386754/pexels-photo-5386754.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT",
+        "Tailwind CSS",
+      ],
+      liveUrl: "https://todo-app-ten-beta-82.vercel.app/", // 🔁 Replace with your deployment link
+      githubUrl: "https://github.com/Arpit22cse/Todo-backend", // 🔁 Replace with your GitHub repo
       featured: false,
     },
   ];
