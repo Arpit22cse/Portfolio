@@ -20,7 +20,7 @@ const Skills: React.FC = () => {
       title: 'Backend & Tools',
       skills: [
         { name: 'Node.js', level: 85 },
-        { name: 'Python', level: 75 },
+        { name: 'Java', level: 75 },
         { name: 'Git/GitHub', level: 90 },
         { name: 'Docker', level: 70 },
         { name: 'Postman', level: 85 },
@@ -29,9 +29,9 @@ const Skills: React.FC = () => {
     {
       title: ' Design & Other',
       skills: [
-        { name: 'Figma', level: 80 },
+        { name: 'Hoppscotch', level: 80 },
         { name: 'UI/UX Design', level: 85 },
-        { name: 'Testing', level: 78 },
+        { name: 'Websocket', level: 78 },
         { name: 'GraphQL', level: 72 },
         { name: 'MongoDB', level: 75 },
       ],
